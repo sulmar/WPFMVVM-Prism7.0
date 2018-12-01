@@ -61,6 +61,8 @@
     <Reference Include="PresentationFramework" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IServices\IProductsService.cs" />
+    <Compile Include="Models\Product.cs" />
     <Compile Include="ModuleCModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
@@ -75,6 +77,8 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Services\ProductsService.cs" />
+    <Compile Include="ViewModels\ViewCViewModel.cs" />
     <Compile Include="Views\ViewC.xaml.cs">
       <DependentUpon>ViewC.xaml</DependentUpon>
     </Compile>
@@ -95,4 +99,7 @@
     </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>copy $(TargetPath) $(SolutionDir)$(SolutionName)\$(OutDir)</PostBuildEvent>
+  </PropertyGroup>
 </Project>

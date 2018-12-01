@@ -1,4 +1,6 @@
 ﻿using CommonServiceLocator;
+using Prism.Hello.IServices;
+using Prism.Hello.Services;
 using Prism.Hello.Views;
 using Prism.Ioc;
 using Prism.Unity;
@@ -23,6 +25,8 @@ namespace Prism.Hello
         {
             containerRegistry.RegisterForNavigation<ViewA>();
             containerRegistry.RegisterForNavigation<ViewB>();
+
+            containerRegistry.Register<ICustomersService, CustomersService>();
         }
 
         protected override Window CreateShell()

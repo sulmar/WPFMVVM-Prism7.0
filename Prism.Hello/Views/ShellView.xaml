@@ -1,14 +1,34 @@
-﻿<Window x:Class="Prism.Hello.MainWindow"
+﻿<Window x:Class="Prism.Hello.Views.ShellView"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Prism.Hello"
+        xmlns:local="clr-namespace:Prism.Hello.Views"
         xmlns:v="clr-namespace:Prism.Hello.Views"
+        xmlns:prism="http://prismlibrary.com/"
+        prism:ViewModelLocator.AutoWireViewModel="True"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="ShellView" Height="450" Width="800">
     <Grid>
-        <v:ViewA />
-        
+
+        <!--<ContentControl>
+            <v:ViewA />
+        </ContentControl>-->
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <Button Content="ViewA" Margin="5" Command="{Binding NavigateCommand}" CommandParameter="ViewA" />
+            <Button Content="ViewB" Margin="5" Command="{Binding NavigateCommand}" CommandParameter="ViewB" />
+        </StackPanel>
+
+        <ContentControl Grid.Row="1" prism:RegionManager.RegionName="ContentRegion" />
+
+
+
+
     </Grid>
 </Window>

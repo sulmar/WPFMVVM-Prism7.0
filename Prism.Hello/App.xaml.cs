@@ -3,6 +3,7 @@ using Prism.Hello.IServices;
 using Prism.Hello.Services;
 using Prism.Hello.Views;
 using Prism.Ioc;
+using Prism.Modularity;
 using Prism.Unity;
 using System;
 using System.Collections.Generic;
@@ -32,6 +33,12 @@ namespace Prism.Hello
         protected override Window CreateShell()
         {
             return ServiceLocator.Current.GetInstance<ShellView>();
+        }
+
+        protected override IModuleCatalog CreateModuleCatalog()
+        {
+             return new ConfigurationModuleCatalog();
+          //  return  new DirectoryModuleCatalog() {  ModulePath = Environment.CurrentDirectory };
         }
     }
 }

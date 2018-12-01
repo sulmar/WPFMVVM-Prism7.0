@@ -23,6 +23,7 @@
         <StackPanel Orientation="Horizontal">
             <Button Content="ViewA" Margin="5" Command="{Binding NavigateCommand}" CommandParameter="ViewA" />
             <Button Content="ViewB" Margin="5" Command="{Binding NavigateCommand}" CommandParameter="ViewB" />
+            <Button Content="ViewC" Margin="5" Command="{Binding NavigateCommand}" CommandParameter="ViewC" />
         </StackPanel>
 
         <ContentControl Grid.Row="1" prism:RegionManager.RegionName="ContentRegion" />

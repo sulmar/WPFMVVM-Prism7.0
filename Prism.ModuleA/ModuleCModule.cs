@@ -1,5 +1,7 @@
 ﻿using Prism.Ioc;
 using Prism.Modularity;
+using Prism.ModuleA.IServices;
+using Prism.ModuleA.Services;
 using Prism.ModuleA.Views;
 using Prism.Regions;
 using System;
@@ -26,6 +28,7 @@ namespace Prism.ModuleA
 
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.Register<IProductsService, ProductsService>();
             // throw new NotImplementedException();
         }
     }

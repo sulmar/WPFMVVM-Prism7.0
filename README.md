@@ -9,8 +9,9 @@ Przykładowa aplikacja WPF MVVM z użyciem Prism 7.0
 - Obsługa regionów
 - Wstrzykiwanie zależności
 - Obsługa regionów
+- Obsługa nawigacji (IRegionManager)
 - Modułowość
-
+- Implementacja EventAggretor
 
 Prism 7.0 wnosi kilka zmian w stosunku do poprzednich wersji.
 
